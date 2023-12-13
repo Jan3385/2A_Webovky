@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="icon.ico" rel="shortcut icon" type="image/png">
+    <title>Recenze - Richter</title>
+</head>
+<body>
+    <nav class="topNav">
+        <a href="index.html" target="_self" class="selectedOption" id="prvni">Home</a>
+        <a href="recenze.html" target="_self" id="druha">Recenze</a>
+        <a href="formular.html" target="_self" id="treti">Zpětná vazba</a>
+        <a href="hra_roku.html" target="_self" id="ctvrta">Hra Roku</a>
+    </nav>
+    <div class="Background"></div>
+    <div class="menuDiv">
+        <h4 class="menuLogo">SPŠE recenze her</h4>
+        <p>Nejlepší recenze na videohry přímo od studenta střední průmyslové školy Havířov!</p>
+    </div>
+    <div class="MenuInfoDiv">
+        <p id="info"></p>
+    </div>
+    <div class="menuHodnoceni">
+        <div class="menuHodnoceniInner">
+            <img src="./Feedback/Martin.jpg" alt="Recenzátor">
+            <div>
+                <h1>Martin</h1>
+                <p><span>“</span>Nejlepší stránka na světě<span>”</span></p>
+            </div>
+        </div>
+        <div class="menuHodnoceniInner">
+            <img src="./Feedback/Simon.jpg" alt="Recenzátor">
+            <div>
+                <h1>Šimon</h1>
+                <p><span>“</span>Lepší recenze jsem nikdy neviděl<span>”</span></p>
+            </div>
+        </div>
+        <div class="menuHodnoceniInner">
+            <img src="./Feedback/Robert.jpg" alt="Recenzátor">
+            <div>
+                <h1>Robert</h1>
+                <p><span>“</span>Proč odešel můj tata?<span>”</span></p>
+            </div>
+        </div>
+    </div>
+    <footer>Made by Jan Richter 2023</footer>
+    <script>
+        var i = 0;
+        var texts = [
+            "Věděli jste že: videohry byly vynalezeny Johnem Videohrou který se chtěl bavit u počítače?",
+            "Věděli jste že: mě nenapadá co napsat dál?",
+            "Věděli jste že: počítače z roku 1980 nejsou schopny rozjet GTA V?",
+            "Věděli jste že: Monster Energy drink vyhrál soutěž o nejzdravější nápoj roku 2020?",
+            "Věděli jste že: Crazywolf neobsahuje reálné šílené vlky?",
+            "Věda dokázala že s výšším počtem nahraných hodin v LoL se zmenšuje šance si najít přítelkyni",
+            "Je potvrzeno že 9 z 10 lidí tyhle zprávy ani nečte",
+            "GTA VI výjde v roce 2025",
+            "Cookie clicker je nyní nejhranější hra všech dob",
+            "Minecraft svět je tak velký, že se tam vlezou i 3 velryby",
+            "Hlavní důvod k prohře je 'Skill issue', říkají vědci",
+            "Věděli jste že: hlavní důvod obezity je jídlo?",
+            "Rainbow six siedge dostává další patch který úspěšně zmenšuje zábavu hraní o 30%",
+            "Věděli jste že: pokud GTA VI dopadne jako cyberpunk 2077 tak budu plakat",
+            "98% této webové stránky bylo naprogramováto během školy",
+            "Hráč hry Factorio byl nalezen mimo jeho domov. 'Konečně mám normální produkci železa' říká.",
+            "Nový fortnite update přidal nějaké věci",
+            "Policie oznámila že střílení na ostatní chodce jako ve 'Fortnitu' je nelegální",
+            "Ministerstvo zdravotnictví varuje: sezení 20 hodin v kuse není zdravé",
+            "Unity oficiálně vydalo komentář. 'Tak rip no' říkají na ztrátu 93% uživatelů",
+            "'jak jste se dostali do mého domu?' ptá se muž, kterého jsme se zeptali na jeho názor ohledně videoher",
+            "Ministerstvo zdravotnictví varuje: hraní hodně videoher může spůsobit syndrom klepacích kostí",
+            "Half-Life 3 release date byl určen na rok 20030",
+            "Nový Rainbow six siedge update přidá mimo jiné konečně zábavu do hry",
+            "Nový Among Us update přidá dating",
+            "Nové free hry na Epic Games Launcher jsou nějaké random 2 hry které nikdo nikdy nehrál",
+            "No Man's Sky přidává další update který hru vylepší o 90% ale nikdo ho hrát nebude",
+            "Je vědecky dokázáno že Civilizace 6 je lepší než Hearts of Iron 4",
+            "david",
+            "Vývoj GTA VI trval dost dlouho na to aby dříve vyšlo GTA VII",
+            "Fire boy & Water girl dostane live action remake kde Water girl bude africko-americká lesbická žena",
+            "Americká vláda se pokusila vyrobit turretu z Portal 2. Na místě činu zůstalo 7 mrtvých",
+            "raketka.cz bude nyní ukazovat sexuálně explicitní kontent na jejich stránkách",
+            "Chell z Portal 2 byla nalezena v ulicích New Yorku",
+            "Nový Among us update změnil pravidla takže je nyní proti pravidlům lhát během hry",
+            "Pro propagaci nové hry Payday 3 se studio za touhle hrou pokusilo vykrást pobočku ČSOB",
+        ];
+        var cycleTexts = texts;
+        selectedtextIndex = Math.floor(Math.random()*cycleTexts.length);
+        var activeText = cycleTexts[selectedtextIndex];
+        var selectedtext = 0;
+        var speed = 20;
+        async function typeWriter() {
+            for(var i = 0; i < activeText.length; i++){
+                document.getElementById("info").innerHTML += activeText.charAt(i);
+                await delay(speed);
+            }
+            await delay(4000);
+            for(var i = (activeText.length - 1); i >= 0; i--){
+                document.getElementById("info").innerHTML = document.getElementById("info").innerHTML.slice(0, -1);
+                await delay(speed/4); 
+            }
+            selectedtextIndex = Math.floor(Math.random()*cycleTexts.length);
+            activeText = cycleTexts[selectedtextIndex];
+            cycleTexts.splice(selectedtextIndex, 1);
+            if(cycleTexts.length <= 1) cycleTexts = texts;
+            setTimeout(typeWriter, speed);
+        }
+        function delay(time) {
+            return new Promise(resolve => setTimeout(resolve, time));
+        }
+        typeWriter();
+    </script>
+</body>
+</html>

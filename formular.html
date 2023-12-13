@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="icon.ico" rel="shortcut icon" type="image/png">
+    <title>Recenze - Richter</title>
+</head>
+<body>
+    <nav class="topNav">
+        <a href="index.html" target="_self" id="prvni">Home</a>
+        <a href="recenze.html" target="_self" id="druha">Recenze</a>
+        <a href="formular.html" target="_self" class="selectedOption" id="treti">Zpětná vazba</a>
+        <a href="hra_roku.html" target="_self" id="ctvrta">Hra Roku</a>
+    </nav>
+    <div class="formularDiv">
+    <form id="form" method="post" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td><label for="GameSelect">Na jakou recenzi chcete poskytnou zpětnou vazbu?</label></td>
+                <td><select name="game" id="GameSelect" required>
+                    <option value="">--Vyberte Možnost--</option>
+                    <option value="fortnite">Fortnite</option>
+                    <option value="mindustry">Mindustry</option>
+                    <option value="minecraft">Minecraft</option>
+                    <option value="r6s">Tom Clancy's rainbow six siedge</option>
+                    <option value="DRG">Deep Rock Galactic</option>
+                    <option value="GTAV">Grant Theft Auto V</option>
+                    <option value="Roblox">Roblox</option>
+                </select></td> 
+            </tr>
+            <tr>
+                <td><label for="reason">Na co poskytujete zpětnou vazbu?</label></td>
+                <td>
+                    <input type="radio" name="reason" id="Obsah"> 
+                    <label for="Obsah">Obsah recenze</label>
+                    <input type="radio" name="reason" id="Hodnoc">
+                    <label for="Hodnoc">Hodnocení recenze</label>
+                    <input type="radio" name="reason" id="Obr">
+                    <label for="Obr">Obrázek spojený s recenzí</label>
+                </td>
+            </tr>
+            <tr>
+                <td><p>Napište prosím zpětnou vazbu:</p></td>
+                <td><textarea id="zpet-vazba" rows="6" cols="50" placeholder="Zde poskytněte svou zpětnou vazbu"></textarea></td>
+            </tr>
+            <tr>
+                <td><input type="email" placeholder="example_email@example.com" size="40"></td>
+                <td><input type="submit"> <input type="reset"></td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    <div class="formularSeznam">
+        <h4>Prosím předem si uvědoměte:</h4>
+        <ul>
+            <li>Zpracování zpětné vazby trvá 2-3 pracovní dny</li>
+            <li>Nepoužívejte žádné nevhodné slova</li>
+            <li>Zpětná vazba se musí týkat obsahu stránky</li>
+            <li>Pro kohokoli kdo tato pravidla poruší tak ho najdeme <br> a navštívíme když bude spát</li>
+        </ul>
+    </div>
+    
+    <footer>Made by Jan Richter 2023</footer>
+</body>
+</html>
